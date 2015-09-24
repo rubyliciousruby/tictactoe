@@ -15,7 +15,8 @@ $(document).ready(function() {
 				$(this).html("O");
 				player = "O";
 			}
-	
+			$(this).off('click');
+			turn++;
 			checkForWinner(player);
 			console.log(turn);
 			if (turn === 9 && gameOver === false) {
@@ -23,8 +24,7 @@ $(document).ready(function() {
 				resetGame();
 			}
 
-			$(this).off('click');
-			turn++;
+			
 		});
 	}
 
@@ -38,7 +38,6 @@ $(document).ready(function() {
 			if ($('#' + combo[0]).text() == player && $('#' + combo[1]).text() == player && $('#' + combo[2]).text() == player) {
 				alert(player + ' wins!');	
 				gameOver = true;
-				$("td").off('click');
 				resetGame();
 			
 			}
@@ -51,7 +50,8 @@ $(document).ready(function() {
 		$('td').off('click');
 		$('td').css('background-color','');
 		$('td').on('click', gameBegin());
-
+		gameOver = false;
+		turn = 0;
 	}
 
 });
