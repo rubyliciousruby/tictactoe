@@ -15,8 +15,7 @@ $(document).ready(function() {
 				$(this).html("O");
 				player = "O";
 			}
-			//if checkForWinner is true, alert player is a winner.
-			//else if the turn = 9, then alert that no one wins the game.
+	
 			checkForWinner(player);
 			console.log(turn);
 			if (turn === 9 && gameOver === false) {
@@ -41,11 +40,9 @@ $(document).ready(function() {
 				gameOver = true;
 				$("td").off('click');
 				resetGame();
-				//return true;
+			
 			}
 		}
-		// first, i need to loop through the winning combinations
-		// then, check each winning combo by comparing it to the corresponding ID's in the table (TD's)
 
 	} 
 
@@ -58,14 +55,4 @@ $(document).ready(function() {
 	}
 
 });
-		// if winner == true) {
-		// 	alert(player + 'wins!');
 
-		// } else {
-		// 	alert('No one wins the game!');
-
-		// }
-//the alert will come out before the winner finish clicking on the last piece of the puzzle.
-//need a reset button to reset to the initial state for the game.the grids in Safari. the content of the table appeared to be blank in Safari.
-//stable the size of the td tag, it seems to stretch in size when it is on click mode.
-//stop player from clicking after a winner state has been achieved.
